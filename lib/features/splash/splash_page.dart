@@ -7,15 +7,22 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            colors: [AppColor.colorPrimary, AppColor.colorPrimary]),
-      ),
-      child: Text(
-        'PassWall',
-        style: AppTextStyler.bigText.copyWith(color: AppColor.colorSecundary),
+    return Scaffold(
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 60.0,
+          ),
+          Text('PassWords',
+              style: AppTextStyler.bigText
+                  .copyWith(color: AppColor.colorSecundary)),
+          Expanded(
+              flex: 3,
+              child: Container(
+                color: AppColor.colorWhite,
+                child: Image.asset('assets/imagens/CapaTransicao.png'),
+              ))
+        ],
       ),
     );
   }
