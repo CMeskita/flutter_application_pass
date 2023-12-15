@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_pass/commom/constants/app_color.dart';
 import 'package:flutter_application_pass/commom/constants/app_text_styles.dart';
+
+import '../../widgets/primary_button.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -8,6 +12,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.colorWhite,
       appBar: AppBar(
         backgroundColor: AppColor.colorSecundary,
       ),
@@ -17,11 +22,13 @@ class OnboardingPage extends StatelessWidget {
             const SizedBox(
               height: 40.0,
             ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.topRight,
-                color: AppColor.colorWhite,
-                child: Image.asset('assets/imagens/navenfeite.png'),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Expanded(
+                child: Container(
+                  alignment: Alignment.topRight,
+                  child: Image.asset('assets/imagens/navenfeite.png'),
+                ),
               ),
             ),
             Expanded(
@@ -30,27 +37,13 @@ class OnboardingPage extends StatelessWidget {
                   style: AppTextStyler.mediumText
                       .copyWith(color: AppColor.colorSecundary)),
             ),
-            Material(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-              child: Ink(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: AppColor.colorLista)),
-                child: InkWell(
-                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                  onTap: () {},
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    ),
-                    alignment: Alignment.center,
-                    height: 45.0,
-                    child: const Text('Enter'),
-                  ),
-                ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PrimeryButton(
+                text: 'Enter',
+                onPressed: () {
+                  log('mensage');
+                },
               ),
             ),
             const SizedBox(
