@@ -19,7 +19,6 @@ class PrimeryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       height: 45.0,
-      width: 150.0,
       decoration: BoxDecoration(
         borderRadius: _borderRadius,
         gradient: LinearGradient(
@@ -32,8 +31,8 @@ class PrimeryButton extends StatelessWidget {
         onTap: onPressed,
         child: Align(
           child: Text(text,
-              style: AppTextStyler.smallText
-                  .copyWith(color: AppColor.colorSecundary)),
+              style:
+                  AppTextStyler.smallText.copyWith(color: AppColor.colorWhite)),
         ),
       ),
     );

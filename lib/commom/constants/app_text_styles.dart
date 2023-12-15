@@ -10,5 +10,5 @@ class AppTextStyler {
   static const TextStyle smallText = TextStyle(
       fontFamily: 'Inter', fontSize: 20.0, fontWeight: FontWeight.w700);
   static const TextStyle verysmallText = TextStyle(
-      fontFamily: 'Inter', fontSize: 150.0, fontWeight: FontWeight.w700);
+      fontFamily: 'Inter', fontSize: 15.0, fontWeight: FontWeight.w800);
 }
