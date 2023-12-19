@@ -1,15 +1,12 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_pass/commom/constants/app_color.dart';
-import 'package:flutter_application_pass/commom/constants/app_text_styles.dart';
-
+import '../../commom/constants/app_color.dart';
+import '../../commom/constants/app_text_styles.dart';
 import '../../commom/widgets/primary_button.dart';
-import '../../commom/widgets/primary_textbutton.dart';
 import '../../commom/widgets/primary_textfild.dart';
 
-class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,7 @@ class OnboardingPage extends StatelessWidget {
               child: Image.asset('assets/imagens/navenfeite.png'),
             ),
           ),
-          Text('Acessar',
+          Text('Informe o Código',
               textAlign: TextAlign.center,
               style: AppTextStyler.mediumText
                   .copyWith(color: AppColor.colorSecundary)),
@@ -39,28 +36,17 @@ class OnboardingPage extends StatelessWidget {
               child: Image.asset('assets/imagens/CapaTransicaoCinza.png'),
             ),
           ),
-          const Form(
-            child: Column(
-              children: [
-                PrimaryTextFild(),
-              ],
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Form(
+              child: Column(
+                children: [
+                  PrimaryTextFild(),
+                ],
+              ),
             ),
           ),
-
-          //const TextField(),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: PrimaryTextButton(
-              onPressed: () => log('tape'),
-              children: [
-                Text(
-                  'Cadastrar',
-                  style: AppTextStyler.verysmallText
-                      .copyWith(color: AppColor.colorBlack),
-                ),
-              ],
-            ),
-          ),
+          const SizedBox(height: 20.0),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: PrimeryButton(
@@ -70,21 +56,10 @@ class OnboardingPage extends StatelessWidget {
               },
             ),
           ),
-          const AppFooter(),
+          Image.asset('assets/imagens/footerenfeite.png'),
           const SizedBox(height: 20.0),
         ],
       ),
     );
-  }
-}
-
-class AppFooter extends StatelessWidget {
-  const AppFooter({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.asset('assets/imagens/footerenfeite.png');
   }
 }
